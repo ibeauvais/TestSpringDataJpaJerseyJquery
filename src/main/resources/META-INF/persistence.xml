@@ -1,0 +1,18 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+   <persistence-unit name="daoUnit" transaction-type="RESOURCE_LOCAL">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class> com.perso.projectTest1.model.Etablissement</class>
+      <properties>
+         <property name="hibernate.bytecode.use_reflection_optimizer" value="true"/>
+         <property name="hibernate.jdbc.fetch_size" value="30" />
+         <property name="connection.isolation" value="2" />
+         <property name="hibernate.jdbc.use_scrollable_resultset" value="false" />
+         <property name="hibernate.jdbc.batch_size" value="30"/>
+         <property name="hibernate.hbm2ddl.auto" value="update"/>
+         <property name="hibernate.show_sql" value="true" />
+         <property name="hibernate.format_sql" value="true" />
+         <property name="use_sql_comments" value="false" />
+         
+      </properties>
+   </persistence-unit>
+   </persistence>
