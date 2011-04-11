@@ -13,6 +13,15 @@
      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 
+<bean id = "org.h2.tools.Server"
+    class="org.h2.tools.Server"
+    factory-method="createTcpServer"
+    init-method="start"
+    destroy-method="stop">
+    <constructor-arg value="-tcp,-tcpAllowOthers,true,-tcpPort,8043" />
+</bean>
+
+
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">
 			<value>org.h2.Driver</value>

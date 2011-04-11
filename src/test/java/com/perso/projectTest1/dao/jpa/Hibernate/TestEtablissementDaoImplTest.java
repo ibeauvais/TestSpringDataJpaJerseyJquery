@@ -12,6 +12,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.perso.projectTest1.dao.EtablissementDao;
+
 import com.perso.projectTest1.model.Etablissement;
 
 
@@ -29,10 +30,11 @@ public class TestEtablissementDaoImplTest {
 	
 	@Test
 	public void testCreate() {
-	
+		
 		Etablissement etab=new Etablissement();
 		etab.setName("toto");
 		etablissementDao.create(etab);
+		
 	}
 
 }
