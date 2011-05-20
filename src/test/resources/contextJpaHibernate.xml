@@ -46,7 +46,7 @@
 			</bean>
 		</property>
 	</bean>
-	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
     <property name="entityManagerFactory" ref="entityManagerFactory"/>
   </bean>
   <tx:annotation-driven transaction-manager="txManager"/>
@@ -55,6 +55,9 @@
 	
 <jpa:repositories base-package="com.perso.projectTest1.repositories" />
 	
+<bean id="importDbUnit" class="com.perso.projectTest1.test.ImportDbunit" >
+<constructor-arg ><ref local="dataSource"/></constructor-arg>
 
+</bean>
 
 </beans>

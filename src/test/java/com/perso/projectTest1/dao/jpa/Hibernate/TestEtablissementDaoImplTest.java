@@ -1,31 +1,34 @@
 package com.perso.projectTest1.dao.jpa.Hibernate;
 
-import javax.annotation.Resource;
+import static org.junit.Assert.*;
+
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.perso.projectTest1.dao.EtablissementDao;
-
 import com.perso.projectTest1.model.Etablissement;
+import com.perso.projectTest1.repositories.EtablissementDao;
+import com.perso.projectTest1.test.ImportDbunit;
 
 
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@TransactionConfiguration(transactionManager="txManager", defaultRollback=true)
+@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
 @Transactional
 @ContextConfiguration({"classpath:contextJpaHibernate.xml"})
 public class TestEtablissementDaoImplTest {
 
-	private static Logger log=LoggerFactory.getLogger(TestEtablissementDaoImplTest.class);
-    @Resource
+	@Autowired
+	private ImportDbunit importDbUnit;
+	
+    @Autowired
 	private  EtablissementDao etablissementDao;
 	
 	@Test
@@ -33,7 +36,23 @@ public class TestEtablissementDaoImplTest {
 		
 		Etablissement etab=new Etablissement();
 		etab.setName("toto");
-		etablissementDao.create(etab);
+		etab=etablissementDao.save(etab);
+		
+		assertNotNull(etab);
+		assertNotNull(etab.getId());
+		
+	}
+	
+	
+	@Test
+	public void testFindAll() {
+		
+		importDbUnit.importData("dataSet1.xml");
+		List<Etablissement> etablissements=etablissementDao.findAll();
+		
+		assertNotNull(etablissements);
+		assertTrue(etablissements.size()==2);
+		
 		
 	}
 

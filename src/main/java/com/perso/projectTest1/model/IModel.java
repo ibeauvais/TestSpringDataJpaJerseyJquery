@@ -1,5 +1,7 @@
 package com.perso.projectTest1.model;
 
-public interface IModel {
+import java.io.Serializable;
+
+public interface IModel extends Serializable{
 
 }

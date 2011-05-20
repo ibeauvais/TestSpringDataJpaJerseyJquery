@@ -13,6 +13,10 @@ import javax.persistence.Table;
 @Table(name="ETABLISSEMENT")
 public class Etablissement  implements IModel{
 	
+
+	private static final long serialVersionUID = 1959266795481590542L;
+
+
 	@Id
 	private long id;
 	
@@ -25,8 +29,6 @@ public class Etablissement  implements IModel{
 	private String city;
 	
 	private String phone;
-	@Column(name="MOBILE_PHONE")
-	private String mobilePhone;
 	private String fax;
 	
 	@Column(name="DATE_CREATION")
@@ -72,12 +74,7 @@ public class Etablissement  implements IModel{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getMobilePhone() {
-		return mobilePhone;
-	}
-	public void setMobilePhone(String mobilePhone) {
-		this.mobilePhone = mobilePhone;
-	}
+
 	public String getFax() {
 		return fax;
 	}
@@ -100,7 +97,7 @@ public class Etablissement  implements IModel{
 	public String toString() {
 		return "Etablissement [id=" + id + ", name=" + name + ", address="
 				+ address + ", postalCode=" + postalCode + ", city=" + city
-				+ ", phone=" + phone + ", mobilePhone=" + mobilePhone
+				+ ", phone=" + phone 
 				+ ", fax=" + fax + ", dateCreation=" + dateCreation
 				+ ", dateModification=" + dateModification + "]";
 	}
