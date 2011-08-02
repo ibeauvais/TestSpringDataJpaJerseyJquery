@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -31,11 +32,16 @@ public class Etablissement  implements IModel{
 	private String phone;
 	private String fax;
 	
-	@Column(name="DATE_CREATION")
+
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @Column(name = "DATE_CREATION")
 	private Date dateCreation;
 	@Column(name="DATE_MODIFICATION")
 	private Date dateModification;
 	
+    @Column(name = "DESCRIPTION")
+    private String description;
 	
 	
 	public long getId() {
@@ -94,13 +100,23 @@ public class Etablissement  implements IModel{
 		this.dateModification = dateModification;
 	}
 	@Override
-	public String toString() {
-		return "Etablissement [id=" + id + ", name=" + name + ", address="
-				+ address + ", postalCode=" + postalCode + ", city=" + city
-				+ ", phone=" + phone 
-				+ ", fax=" + fax + ", dateCreation=" + dateCreation
-				+ ", dateModification=" + dateModification + "]";
-	}
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Etablissement [id=").append(id).append(", name=").append(name).append(", address=")
+                .append(address).append(", postalCode=").append(postalCode).append(", city=").append(city)
+                .append(", phone=").append(phone).append(", fax=").append(fax).append(", dateCreation=")
+                .append(dateCreation).append(", dateModification=").append(dateModification).append(", description=")
+                .append(description).append("]");
+        return builder.toString();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 	
 	
 

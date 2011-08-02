@@ -17,14 +17,13 @@ public class EtablissementController {
 	@Autowired
 	private EtablissementDao etablissementDao;
 	
-	@RequestMapping("/etablissement/list.do")
+    @RequestMapping("/etablissement/list.do")
 	public ModelAndView list()
 	{
 		List<Etablissement> etablissements=etablissementDao.findAll();
 		 ModelAndView mav = new ModelAndView();
-	        mav.setViewName("helloWorld");
-	        mav.addObject("message", "Hello World!");
-	        mav.setViewName("etablissement/list");
+        mav.addObject("etablissements", etablissements);
+        mav.setViewName("etablissement/list");
 	        return mav;
 	}
 
