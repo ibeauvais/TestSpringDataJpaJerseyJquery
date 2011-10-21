@@ -1,0 +1,122 @@
+
+a {
+	color: #0088cc;
+	
+}
+
+a:link, a:visited, a:active 
+
+{
+
+text-decoration: none;
+
+}
+
+a:hover 
+
+{
+
+text-decoration: underline;
+
+}
+
+
+table {
+border: medium solid #767676;
+border-width:1px; 
+border-collapse: collapse;
+width: 90%;
+}
+th {
+
+ text-align: center;
+font-weight: bold;
+border: thin solid #767676;
+padding: 5px;
+background-color: #767676;
+ color: white ; 
+
+}
+td {
+font-family: sans-serif;
+border: thin solid #767676;
+border-width:1px; 
+padding: 2px;
+background-color: #ffffff;
+font-size: 14px;
+}
+
+h3{
+font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+	}
+	
+#divMain {
+  position: absolute; 
+	width: 70%;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	text-align: justify;
+	margin-left: 100px; 
+ 	color: #767676;
+ 	font-size: 16px;
+ 	
+}
+
+
+label{ 	font: 1em ;
+    font-weight: bold;
+    color: black;
+}
+	
+menu li a {
+	color: white;
+	text-decoration: none;
+}
+
+menu li a:hover {
+	text-decoration: underline;
+}
+menu li { 
+    background: #767676 ;
+    list-style: none ;  
+    color: white ; 
+    border: 1px solid white ; 
+    padding: 5px 5px;
+    margin-bottom: 1px ;     
+    }
+
+menu li.current a {
+	color: black;
+	text-decoration: none;
+}
+
+menu li.current a:hover {
+	text-decoration: none;
+} 
+    
+menu li.current{ 
+    background: white ;
+    list-style: none ;  
+    color: white ; 
+    border: 1px solid black ; 
+    padding: 5px 5px;
+    margin-bottom: 1px ; 
+    }
+
+menu {
+	       	font: 15px ;
+    font-weight: bold;
+	position: absolute; 
+	
+	margin-top: 100px; 
+
+	}
+	
+	
+fieldset legend{
+ 	
+    font-weight: bold;
+    color:black;
+}

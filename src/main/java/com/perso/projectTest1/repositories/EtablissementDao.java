@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.perso.projectTest1.model.Etablissement;
 
+
+
 public interface EtablissementDao extends JpaRepository<Etablissement,Long>{
 
 	

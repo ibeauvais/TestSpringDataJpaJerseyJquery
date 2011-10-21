@@ -26,5 +26,17 @@ public class EtablissementController {
         mav.setViewName("etablissement/list");
 	        return mav;
 	}
+    
+    
+    
+    @RequestMapping("/etablissement/create.do")
+    public ModelAndView creationPage()
+    {
+        List<Etablissement> etablissements=etablissementDao.findAll();
+         ModelAndView mav = new ModelAndView();
+        mav.addObject("etablissements", etablissements);
+        mav.setViewName("etablissement/list");
+            return mav;
+    }
 
 }
