@@ -7,20 +7,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
-	
-	
-	
-    @RequestMapping("/")
-	public ModelAndView list()
-	{
-		
-		 ModelAndView mav = new ModelAndView("home");
-        
-       
-	        return mav;
-	}
-    
-    
-    
+
+
+    @RequestMapping({ "/","/home.do"})
+    public ModelAndView list() {
+
+        ModelAndView mav = new ModelAndView("home");
+
+
+        return mav;
+    }
+
 
 }

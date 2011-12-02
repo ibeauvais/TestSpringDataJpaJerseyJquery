@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-	
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:contextJpaHibernate.xml</param-value>
-	</context-param>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<!-- Handles all requests into the application -->
-	<servlet>
-		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:mvc-config.xml</param-value>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
+
+    <!-- Handles all requests into the application -->
+     <servlet>
+        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:mvc-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+        <url-pattern>/</url-pattern>
+     </servlet-mapping>
+      
+      <servlet>
+        <servlet-name>Jersey</servlet-name>
+        <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+        	<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
 		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
+    </servlet>
 
 	<servlet-mapping>
-		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<servlet-name>Jersey</servlet-name>
+		<url-pattern>/resource/*</url-pattern>
 	</servlet-mapping>
 
-<welcome-file-list>
-<welcome-file>home.do</welcome-file>
-</welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>home.do</welcome-file>
+    </welcome-file-list>
 </web-app>

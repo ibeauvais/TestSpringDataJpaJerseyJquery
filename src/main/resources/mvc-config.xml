@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:p="http://www.springframework.org/schema/p" 
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:mvc="http://www.springframework.org/schema/mvc"
-    xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context 
@@ -12,30 +12,30 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
- <context:component-scan base-package="com.perso.projectTest1.web.controller" />
-	<!-- Configures the @Controller programming model -->
-	<!--<mvc:annotation-driven /> -->
-<!--	<context:component-scan base-package="com.perso.booksManager.view"/>-->
+    <context:component-scan base-package="com.perso.projectTest1.web.controller"/>
+    <!-- Configures the @Controller programming model -->
+    <!--<mvc:annotation-driven /> -->
+    <!--	<context:component-scan base-package="com.perso.booksManager.view"/>-->
 
-	<!-- Forwards requests to the "/" resource to the "welcome" view -->
-<!--	<mvc:view-controller path="/" view-name="welcome"/>-->
+    <!-- Forwards requests to the "/" resource to the "welcome" view -->
+    <!--	<mvc:view-controller path="/" view-name="welcome"/>-->
 
-	<!-- Configures Handler Interceptors -->	
-<!--	<mvc:interceptors>-->
-<!--		 Changes the locale when a 'locale' request parameter is sent; e.g. /?locale=de -->
-<!--		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />-->
-<!--	</mvc:interceptors>-->
+    <!-- Configures Handler Interceptors -->
+    <!--	<mvc:interceptors>-->
+    <!--		 Changes the locale when a 'locale' request parameter is sent; e.g. /?locale=de -->
+    <!--		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />-->
+    <!--	</mvc:interceptors>-->
 
-	<!-- Saves a locale change using a cookie -->
-<!--	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />-->
+    <!-- Saves a locale change using a cookie -->
+    <!--	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />-->
 
-	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/"/>
-		<property name="suffix" value=".jsp"/>
-	</bean>
-	
-	 <mvc:annotation-driven />
-	
+    <!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <mvc:annotation-driven/>
+
 
 </beans>

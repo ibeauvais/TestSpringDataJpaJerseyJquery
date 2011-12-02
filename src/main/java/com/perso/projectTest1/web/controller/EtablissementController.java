@@ -13,30 +13,27 @@ import com.perso.projectTest1.repositories.EtablissementDao;
 
 @Controller
 public class EtablissementController {
-	
-	@Autowired
-	private EtablissementDao etablissementDao;
-	
+
+    @Autowired
+    private EtablissementDao etablissementDao;
+
     @RequestMapping("/etablissement/list.do")
-	public ModelAndView list()
-	{
-		List<Etablissement> etablissements=etablissementDao.findAll();
-		 ModelAndView mav = new ModelAndView();
+    public ModelAndView list() {
+        List<Etablissement> etablissements = etablissementDao.findAll();
+        ModelAndView mav = new ModelAndView();
         mav.addObject("etablissements", etablissements);
         mav.setViewName("etablissement/list");
-	        return mav;
-	}
-    
-    
-    
+        return mav;
+    }
+
+
     @RequestMapping("/etablissement/create.do")
-    public ModelAndView creationPage()
-    {
-        List<Etablissement> etablissements=etablissementDao.findAll();
-         ModelAndView mav = new ModelAndView();
+    public ModelAndView creationPage() {
+        List<Etablissement> etablissements = etablissementDao.findAll();
+        ModelAndView mav = new ModelAndView();
         mav.addObject("etablissements", etablissements);
         mav.setViewName("etablissement/list");
-            return mav;
+        return mav;
     }
 
 }
