@@ -22,7 +22,7 @@ import com.perso.projectTest1.test.ImportDbunit;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
 @Transactional
-@ContextConfiguration({"classpath:contextJpaHibernate.xml"})
+@ContextConfiguration({"classpath:spring.xml"})
 public class TestEtablissementDaoImplTest {
 
 	@Autowired

@@ -7,11 +7,14 @@
 
 
 <html>
-<head>
-	<title>Etablissements list</title>
-</head>	
+<jsp:include page="../common/header.jsp" >
+	<jsp:param name="title" value="Liste des établissements"/>
+</jsp:include>
 <body>
-<div class="container">
+<%@ include file="../common/menu.jsp" %>
+<%@ include file="../common/common.jsp" %>
+
+<div id="Main">
 	<h1>
 		Etablissements
 	</h1>
@@ -24,13 +27,11 @@
 </tr>
   </thead>
 <c:forEach var="etablissement" items="${etablissements}">
-<tr>
-	<td>&nbsp;<a href="${etablissement.id}">${etablissement.name}</a>&nbsp;</td>
-	<td>&nbsp;<spring:eval expression="etablissement.dateCreation"/>&nbsp;</td>
-	
-</tr>
-	
-
+	<tr id="${etablissement.id}">
+		<td>&nbsp;<a href="${etablissement.id}">${etablissement.name}</a>&nbsp;</td>
+		<td>&nbsp;<spring:eval expression="etablissement.dateCreation"/>&nbsp;</td>
+		
+	</tr>
 </c:forEach>
 
 		  </table>

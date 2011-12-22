@@ -1,0 +1,35 @@
+<htlm>
+<head>
+<script src="js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+<body>
+<div id="monDiv" style="display:none;">
+	<label>nom : </nom><span id="nom"></span><br/>
+	<label>address :</nom><span id="address"></span>
+</div>
+
+<br/>
+
+<input type="text" name="id" /><br/>
+<input type="button" name="click" value="view" id="view"/>
+
+<script>
+<!--
+$(document).ready(function() {	
+ 
+	 $('#view').bind('click',function(){
+		$.getJSON("resource/etablissement/"+$('input[name=id]').val(), function(data){
+	
+		$("#nom").text(data['name']);
+		$("#address").text(data['address']);
+		$("#monDiv").show();
+		});
+	});
+
+});
+-->
+</script>
+</body>
+</table>

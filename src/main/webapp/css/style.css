@@ -52,16 +52,21 @@ font-size: 16px;
     text-align: center;
 	}
 	
-#divMain {
+#main {
   position: absolute; 
 	width: 70%;
 	padding: 10px 10px;
 	margin: 10px 10px;
 	text-align: justify;
-	margin-left: 100px; 
+	margin-left: 260px; 
  	color: #767676;
  	font-size: 16px;
  	
+}
+
+#main h1{
+	 text-align: center;
+	
 }
 
 
@@ -120,3 +125,61 @@ fieldset legend{
     font-weight: bold;
     color:black;
 }
+
+
+#backgroundPopup{  
+display:none;  
+position:fixed;  
+_position:absolute; /* hack for internet explorer 6*/  
+height:100%;  
+width:100%;  
+top:0;  
+left:0;  
+background:grey;  
+border:1px solid #cecece;
+
+z-index:1;  
+}  
+#estabCreation{  
+display:none;  
+position:fixed;
+left:300;  
+_position:absolute; /* hack for internet explorer 6*/  
+height:384px;  
+width:408px;  
+background:#FFFFFF;  
+border:2px solid #cecece;  
+z-index:2;  
+padding:12px;  
+font-size:13px;
+}
+
+#estabCreation label{
+	width: 100 px;
+	display: block;
+	float: left;
+	padding-right: 1%;
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+#estabCreation input[type="button"]{
+	 position: relative;
+	left:200px; 
+}
+#estabCreation a{  
+cursor: pointer;  
+text-decoration:none;  
+}  
+
+
+#estabCreationClose{  
+font-size:14px;  
+line-height:14px;  
+right:6px;  
+top:4px;  
+position:absolute;  
+color:#6fa5fd;  
+font-weight:700;  
+display:block;  
+}  
